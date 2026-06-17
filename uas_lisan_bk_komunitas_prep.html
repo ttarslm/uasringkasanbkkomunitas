@@ -1,0 +1,291 @@
+
+<style>
+  .root { padding: 1rem 0; font-size: 15px; color: var(--color-text-primary); }
+  .section-title { font-size: 18px; font-weight: 500; margin: 1.5rem 0 0.75rem; }
+  .tag { display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 20px; margin-bottom: 8px; font-weight: 500; }
+  .tag-ok { background: var(--color-background-success); color: var(--color-text-success); }
+  .tag-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .tag-info { background: var(--color-background-info); color: var(--color-text-info); }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .card-header { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+  .card-header .icon { font-size: 18px; }
+  .card-title { font-size: 15px; font-weight: 500; flex: 1; }
+  .chevron { font-size: 16px; color: var(--color-text-secondary); transition: transform 0.2s; }
+  .chevron.open { transform: rotate(180deg); }
+  .card-body { display: none; margin-top: 12px; border-top: 0.5px solid var(--color-border-tertiary); padding-top: 12px; }
+  .card-body.open { display: block; }
+  .answer-label { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin: 12px 0 4px; }
+  .answer-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; font-size: 14px; line-height: 1.65; color: var(--color-text-primary); }
+  .tip { border-left: 3px solid var(--color-border-warning); border-radius: 0; background: var(--color-background-warning); padding: 8px 12px; font-size: 13px; color: var(--color-text-warning); margin-top: 10px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+  .theory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 8px; }
+  .theory-chip { padding: 8px 10px; border-radius: var(--border-radius-md); font-size: 13px; font-weight: 500; line-height: 1.4; }
+  .t1 { background: #EEEDFE; color: #3C3489; }
+  .t2 { background: #E1F5EE; color: #085041; }
+  .t3 { background: #FAECE7; color: #712B13; }
+  .t4 { background: #FAEEDA; color: #633806; }
+  .t5 { background: #E6F1FB; color: #0C447C; }
+  .t6 { background: #EAF3DE; color: #27500A; }
+  .nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+  .nav-btn { font-size: 13px; padding: 5px 14px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+  .nav-btn.active { background: var(--color-background-info); color: var(--color-text-info); border-color: var(--color-border-info); font-weight: 500; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .good-list li { margin-bottom: 6px; font-size: 14px; line-height: 1.6; }
+  .good-list { padding-left: 1.2rem; }
+  .meter { height: 6px; border-radius: 3px; background: var(--color-background-secondary); margin-top: 6px; overflow: hidden; }
+  .meter-fill { height: 100%; border-radius: 3px; }
+</style>
+
+<div class="root">
+  <h2 class="sr-only">Panduan persiapan UAS lisan BK Komunitas - Komunitas Satoe Atap</h2>
+
+  <nav class="nav" role="tablist">
+    <button class="nav-btn active" onclick="switchTab('evaluasi')" role="tab">Evaluasi Bab 2</button>
+    <button class="nav-btn" onclick="switchTab('lapangan')" role="tab">A. Pengalaman Lapangan</button>
+    <button class="nav-btn" onclick="switchTab('analisis')" role="tab">B. Analisis</button>
+    <button class="nav-btn" onclick="switchTab('refleksi')" role="tab">C. Refleksi</button>
+    <button class="nav-btn" onclick="switchTab('profesional')" role="tab">D. Profesional</button>
+    <button class="nav-btn" onclick="switchTab('jebakan')" role="tab">Pertanyaan jebakan</button>
+  </nav>
+
+  <div id="tab-evaluasi" class="section active">
+    <div class="section-title">Penilaian Bab 2 kamu</div>
+    <div class="card">
+      <div class="answer-label">Yang sudah sangat baik</div>
+      <ul class="good-list">
+        <li>6 teori dipilih <strong>koheren</strong> — semuanya saling melengkapi, bukan asal tempel</li>
+        <li>Setiap teori <strong>dikaitkan langsung ke Satoe Atap</strong> (Spot Seroja, anak jalanan Simpang Lima)</li>
+        <li>Bahasa akademis tapi ada <strong>"jiwa"-nya</strong> — pakai istilah seperti "pisau analisis", "lensa sudut lebar", "wide-angle lens" yang khas BK Komunitas</li>
+        <li>Referensi primer lengkap dan tepat (Lewis et al., Sue & Sue, Bronfenbrenner, dll)</li>
+        <li>Ada penjelasan <strong>operasional</strong> tiap teori — bukan cuma definisi, tapi cara kerjanya di lapangan</li>
+      </ul>
+      <div class="answer-label" style="margin-top:14px">Yang perlu kamu perhatikan saat ujian</div>
+      <div class="tip">Satu hal yang mungkin ditanya: Bab 2 tertulis sangat bagus, tapi apakah kamu bisa <em>menghubungkan isinya dengan temuan lapangan nyata</em> di Bab 4 secara spontan? Kuasai itu!</div>
+    </div>
+    <div class="section-title">6 teori — hafal singkat & fungsinya</div>
+    <div class="theory-grid">
+      <div class="theory-chip t1">1. Social Justice Counseling<br><span style="font-weight:400;font-size:12px">Masalah anak jalanan = produk sistem, bukan cacat personal</span></div>
+      <div class="theory-chip t2">2. Multicultural Counseling<br><span style="font-weight:400;font-size:12px">Relawan harus sadar bias budaya diri sendiri dulu</span></div>
+      <div class="theory-chip t3">3. RESPECTFUL Model<br><span style="font-weight:400;font-size:12px">10 dimensi identitas anak untuk asesmen holistik</span></div>
+      <div class="theory-chip t4">4. Prevention-Development<br><span style="font-weight:400;font-size:12px">Perkuat faktor protektif, kurangi faktor risiko (Albee)</span></div>
+      <div class="theory-chip t5">5. Community Empowering<br><span style="font-weight:400;font-size:12px">Ubah internalized oppression jadi kemandirian kolektif</span></div>
+      <div class="theory-chip t6">6. Ecological System<br><span style="font-weight:400;font-size:12px">Perilaku anak = fungsi dari 5 lapisan sistem (Bronfenbrenner)</span></div>
+    </div>
+  </div>
+
+  <div id="tab-lapangan" class="section">
+    <div class="section-title">A. Pengalaman lapangan</div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🔍</span>
+        <span class="card-title">Temuan paling menarik?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Temuan paling menarik bagi saya adalah kontradiksi antara <em>keterbatasan dan komitmen</em> yang kami saksikan langsung. Ketika hanya satu anak yang hadir di Spot Seroja, relawan tetap menjalankan kegiatan belajar sepenuhnya. Ini menunjukkan bahwa kekuatan Satoe Atap bukan terletak pada jumlah peserta, melainkan pada modal sosial berupa nilai ketulusan "tanpa pamrih" yang tertanam kuat. Dari kacamata BK Komunitas, ini adalah contoh nyata <em>people-centered approach</em> (Chambers, 1995).</div>
+        <div class="tip">Bisa tambah: "Menariknya juga adalah peran Satoe Atap sebagai mikrosistem pengganti yang aman bagi anak-anak yang mikrosistem keluarganya tidak ideal."</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🚧</span>
+        <span class="card-title">Tantangan saat masuk komunitas?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Tantangan utama adalah membangun <em>rapport</em> dalam waktu singkat. Anak-anak yang terbiasa berganti relawan cenderung berhati-hati dengan orang baru. Ini sejalan dengan prinsip Multicultural Counseling — kami harus menanggalkan asumsi dan prasangka tentang anak jalanan sebelum masuk lapangan. Kepercayaan tidak bisa dibangun instan, butuh konsistensi dan penerimaan tanpa syarat.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">💬</span>
+        <span class="card-title">Bagaimana respons komunitas?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Komunitas sangat terbuka dan kooperatif. Ketua dan pengurus memberikan akses penuh untuk observasi dan wawancara semi-terstruktur. Relawan berbagi pengalaman dengan jujur — termasuk kendala-kendala internal seperti miskomunikasi antar divisi dan keterlambatan koordinasi. Keterbukaan ini justru menunjukkan kematangan komunitas dan budaya reflektif yang sehat.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-analisis" class="section">
+    <div class="section-title">B. Analisis</div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">❓</span>
+        <span class="card-title">Mengapa masalah itu muncul?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Masalah psikososial anak binaan muncul bukan karena cacat moral personal, melainkan karena <em>kegagalan sistem ekologis berlapis</em> (Bronfenbrenner, 1979). Pada level <strong>makrosistem</strong>: kemiskinan struktural dan kebijakan kota yang tidak berpihak pada anak marjinal. Level <strong>mikrosistem</strong>: keluarga prasejahtera yang tidak mampu menyediakan stimulasi pendidikan optimal. Level <strong>eksosistem</strong>: minimnya akses layanan sosial yang terjangkau. Hasilnya adalah anak yang tumbuh tanpa keselarasan ekologis (ecological concordance).</div>
+        <div class="tip">Kunci: selalu sebut nama teori + penulis. "Menurut Bronfenbrenner…" lebih kuat daripada hanya menjelaskan.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">⚠️</span>
+        <span class="card-title">Faktor risiko yang dominan?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Menggunakan Persamaan Albee yang dimodifikasi Lewis et al. (2011): faktor risiko dominan adalah kemiskinan dan ketidakberdayaan struktural (powerlessness). Ini adalah sumber stres terbesar bagi kelompok marjinal. Dalam kerangka RESPECTFUL, dimensi E (Economic Class) dan T (Trauma & Threats) menunjukkan kerentanan paling tinggi. Yang memperparah adalah <em>internalized oppression</em> — anak-anak yang mulai menginternalisasi bahwa kondisi mereka adalah "takdir" atau kesalahan pribadi.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">📚</span>
+        <span class="card-title">Bagaimana teori menjelaskan fenomena?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Ambil contoh konkret: perilaku memanjat pohon saat kegiatan. Konseling konvensional mungkin melihatnya sebagai kenakalan. Tapi melalui lensa Ecological System — itu adalah ekspresi kebutuhan akan stimulasi dan perhatian yang tidak terpenuhi dalam mikrosistem keluarga. Social Justice Counseling menambahkan: masalah ini adalah manifestasi dari keterbatasan pilihan yang diciptakan sistem. Prevention-Development menjawab: solusinya bukan hukuman, tapi psikoedukasi dan penguatan kompetensi prososial.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-refleksi" class="section">
+    <div class="section-title">C. Refleksi</div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🔄</span>
+        <span class="card-title">Perubahan perspektif kamu?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Sebelum turun lapangan, saya melihat BK Komunitas sebagai versi "BK sekolah yang dipindahkan ke luar gedung." Setelah di Spot Seroja, saya sadar bahwa ini adalah paradigma yang berbeda sepenuhnya. Konselor bukan hanya membantu individu — tapi juga <em>memodifikasi ekosistem</em>, menjaga kesehatan organisasi relawannya, dan berperan sebagai agen perubahan sistemik. Perspektif saya bergeser dari <em>person-oriented</em> ke <em>ecological focus</em>.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🪞</span>
+        <span class="card-title">Bias pribadi yang kamu sadari?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Saya menyadari bias terkait dimensi E (Economic Class) dalam RESPECTFUL Model — saya punya asumsi awal bahwa anak dari keluarga prasejahtera kurang termotivasi belajar. Kenyataannya berbeda. Ini adalah contoh dari apa yang Multicultural Counseling sebut sebagai <em>prasangka terhadap worldview konseli yang berbeda</em>. Tugas konselor bukan menerapkan standar "kelas menengah" pada semua klien, melainkan memahami konteks unik setiap individu.</div>
+        <div class="tip">Jangan takut ngaku punya bias — dosen justru senang kalau kamu bisa merefleksikannya dengan jujur dan kaitkan ke teori.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🌱</span>
+        <span class="card-title">Makna bagi calon konselor?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Pengalaman ini mengajarkan bahwa konselor komunitas harus memiliki dua hal sekaligus yang disebut Lewis et al. (2011): <em>the empathy of the counselor and the courage of the advocate</em>. Empati tanpa keberanian advokasi hanya menghasilkan simpati yang pasif. Keberanian tanpa empati menghasilkan aktivisme yang arogan. Satoe Atap menunjukkan bahwa keduanya bisa diintegrasikan melalui kerja komunitas yang konsisten dan tulus.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-profesional" class="section">
+    <div class="section-title">D. Profesional</div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🎯</span>
+        <span class="card-title">Prioritas intervensi jika jadi konselor di sana?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box"><strong>Prioritas 1 (mikrosistem):</strong> Program psikoedukasi kelompok kecil untuk anak binaan — pengelolaan emosi, self-esteem, keterampilan koping. Ini langsung memperkuat faktor protektif menurut Albee.<br><br><strong>Prioritas 2 (mesosistem):</strong> Perkuat Anjangsana dengan panduan terstruktur agar tidak hanya silaturahmi, tapi juga asesmen kondisi keluarga.<br><br><strong>Prioritas 3 (eksosistem/makrosistem):</strong> Advokasi ke Dinas Sosial dan pemerintah kota — memanfaatkan rekam jejak 17 tahun sebagai basis argumen untuk mendapat dukungan kebijakan.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">🧭</span>
+        <span class="card-title">Pendekatan yang paling relevan?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-label">Jawaban yang kuat</div>
+        <div class="answer-box">Tidak ada satu pendekatan tunggal yang paling relevan — justru integrasi keempatnya yang optimal. Tapi jika harus memilih <em>titik masuk</em>, saya akan mulai dari <strong>Ecological System</strong> sebagai kerangka asesmen menyeluruh, lalu masuk ke <strong>Community Empowering</strong> sebagai strategi intervensinya. Ecological System membantu saya memetakan di mana "kerusakan" terjadi, sementara Community Empowering memberikan arah pemulihannya.</div>
+        <div class="tip">Kalau dosen tanya "kenapa enam teori?" — jawab: "Karena masing-masing membidik lapisan yang berbeda. Social Justice & Ecological menjawab 'mengapa', Multicultural & RESPECTFUL menjawab 'siapa kliennya', Prevention-Development & Community Empowering menjawab 'bagaimana intervensinya'."</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-jebakan" class="section">
+    <div class="section-title">Pertanyaan jebakan yang mungkin muncul</div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">💣</span>
+        <span class="card-title">Kenapa pilih Satoe Atap, bukan komunitas lain?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-box">Tiga alasan utama: (1) rekam jejak 17 tahun yang terukur — jarang ada komunitas akar rumput yang bertahan selama itu, artinya ada sesuatu yang kuat untuk dikaji; (2) populasi sasarannya adalah anak jalanan dan keluarga prasejahtera, yang merupakan kelompok paling membutuhkan layanan BK Komunitas; (3) lokasinya di Simpang Lima yang secara ironis kontras — kemewahan kota dan kemiskinan hidup berdampingan, persis seperti yang digambarkan Social Justice Counseling tentang ketimpangan struktural.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">💣</span>
+        <span class="card-title">Kenapa mereka membuat komunitas ini?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-box">Satoe Atap lahir dari kepedulian mahasiswa Hukum UNDIP terhadap anak-anak jalanan dan pemulung di sekitar kampus Pleburan pada 2007. Ini adalah respons organik terhadap ketimpangan sosial yang mereka saksikan langsung. Dari perspektif BK Komunitas, ini adalah contoh community collaboration dan systems change dari level bawah — bukan top-down dari pemerintah, tapi bottom-up dari warga kampus. Nama "Sayang iToe Asli Tanpa Pamrih" menunjukkan motivasi yang murni altruistik, bukan transaksional.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">💣</span>
+        <span class="card-title">Program apa agar komunitas bisa terus berjalan?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-box">Dua prioritas: pertama, <strong>sistem kaderisasi terstruktur</strong> — karena mayoritas relawan adalah mahasiswa dengan masa terlibat terbatas, perlu ada mentoring relawan senior ke yang baru agar institutional knowledge tidak hilang tiap kepengurusan berganti. Kedua, <strong>SOP koordinasi sederhana</strong> untuk tiap divisi — tenggat waktu materi, protokol kehadiran, serah terima perlengkapan — agar miskomunikasi tidak terus berulang. Dua hal ini menjaga mesosistem internal komunitas tetap solid.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <span class="icon">💣</span>
+        <span class="card-title">Kenapa keenam teori itu semuanya dicantumkan?</span>
+        <i class="ti ti-chevron-down chevron" aria-hidden="true"></i>
+      </div>
+      <div class="card-body">
+        <div class="answer-box">Karena masing-masing menjawab pertanyaan yang berbeda tentang komunitas yang sama. <strong>Social Justice Counseling & Ecological System</strong> = menjawab "mengapa masalah ini ada?" (level struktural). <strong>Multicultural Counseling & RESPECTFUL Model</strong> = menjawab "siapa kliennya dan bagaimana kita memahaminya?" (level identitas & budaya). <strong>Prevention-Development & Community Empowering</strong> = menjawab "apa yang harus dilakukan?" (level intervensi). Keenam teori adalah satu ekosistem analitis — menghilangkan salah satu berarti kehilangan satu lapisan pemahaman.</div>
+        <div class="tip">Ini jawaban paling penting untuk dihafal! Strukturnya: mengapa → siapa → apa yang dilakukan.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+  function toggleCard(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    body.classList.toggle('open');
+    chevron.classList.toggle('open');
+  }
+</script>
